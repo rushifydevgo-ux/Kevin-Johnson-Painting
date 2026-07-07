@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Johnson Painting | San Jose Interior & Exterior Painters</title>
+<meta name="description" content="Kevin Johnson Painting — 4.8 stars, 86 Yelp reviews. Interior, exterior, cabinet & trim painting for San Jose homes and businesses. Free estimates.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HousePainter",
+  "name": "Kevin Johnson Painting",
+  "image": "",
+  "areaServed": "San Jose, CA",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Jose",
+    "addressRegion": "CA"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "86"
+  },
+  "foundingDate": "2002",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  },
+  "priceRange": "$$"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --canvas:#E7E3D9;
+    --canvas-2:#DED8C9;
+    --ink:#201E1B;
+    --ink-soft:#4A463F;
+    --yellow:#E8A93B;
+    --yellow-deep:#C98A1F;
+    --blue:#1F4E79;
+    --blue-deep:#163A5A;
+    --sage:#74845F;
+    --clay:#B14B2C;
+    --paper:#F6F3EC;
+    --line: rgba(32,30,27,0.14);
+    --radius: 6px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--canvas);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+
+  h1,h2,h3,.display{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.08;
+    color:var(--ink);
+  }
+
+  .eyebrow{
+    font-family:'Poppins', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--blue-deep);
+    font-weight:600;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 28px;
+    border-radius:3px;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    letter-spacing:0.01em;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--yellow);
+    color:var(--ink);
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .btn-primary:hover{box-shadow:6px 6px 0 var(--ink);}
+  .btn-outline{
+    background:transparent;
+    border-color:var(--paper);
+    color:var(--paper);
+  }
+  .btn-outline:hover{background:rgba(246,243,236,0.1);}
+  .btn-dark{
+    background:var(--ink);
+    color:var(--paper);
+    box-shadow:4px 4px 0 var(--yellow);
+  }
+  .btn-dark:hover{box-shadow:6px 6px 0 var(--yellow);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:var(--canvas);
+    border-bottom:2px solid var(--ink);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 28px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    height:76px;
+    width:210px;
+    overflow:hidden;
+    border-radius:8px;
+  }
+  .logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.1);
+    transform-origin:center;
+    display:block;
+  }
+  .nav-links{
+    display:flex;
+    gap:32px;
+    font-weight:600;
+    font-size:0.92rem;
+  }
+  .nav-links a{
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:0;height:2px;
+    background:var(--yellow-deep);
+    transition:width .2s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .nav-phone{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+  }
+  .mobile-toggle{display:none;}
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-phone{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:90px 0 70px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:50px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5.6vw, 4.6rem);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--blue-deep);
+    -webkit-text-stroke:0;
+  }
+  .hero-sub{
+    margin-top:22px;
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .hero-stats{
+    margin-top:44px;
+    display:flex;
+    gap:36px;
+    flex-wrap:wrap;
+  }
+  .stat-num{
+    font-family:'Poppins', sans-serif;
+    font-weight:900;
+    font-size:2.4rem;
+    color:var(--ink);
+    line-height:1;
+  }
+  .stat-label{
+    font-family:'Poppins', sans-serif;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  /* ---------- PHOTOS ---------- */
+  .photo-frame{
+    border:none;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(32,30,27,0.16);
+    background:#000;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .photo-frame:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 36px rgba(32,30,27,0.22);
+  }
+  .photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .hero-photos{
+    position:relative;
+    min-height:400px;
+  }
+  .hero-photo-main{
+    width:88%;
+    height:340px;
+  }
+  .hero-photo-accent{
+    position:absolute;
+    bottom:-28px;
+    right:-6px;
+    width:52%;
+    height:190px;
+    border:5px solid var(--paper);
+  }
+  @media (max-width:900px){
+    .hero-photos{min-height:300px;margin-top:20px;}
+    .hero-photo-main{height:240px;}
+    .hero-photo-accent{height:140px;bottom:-20px;}
+  }
+
+  /* ---------- BRUSH DIVIDER ---------- */
+  .brush-divider{
+    width:100%;
+    height:26px;
+    display:block;
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{
+    background:var(--ink);
+    color:var(--paper);
+    padding:28px 0;
+  }
+  .trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:18px;
+    font-family:'Poppins', sans-serif;
+    font-size:0.76rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  .trust-row span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    white-space:nowrap;
+  }
+  .trust-row span::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--yellow);
+    border-radius:50%;
+    flex-shrink:0;
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:90px 0;}
+  .sec-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .sec-head h2{
+    font-size:clamp(2rem, 4vw, 3rem);
+    margin-top:12px;
+  }
+  .sec-head p{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+
+  /* ---------- SERVICES: HOVER ACCORDION ---------- */
+  .services{background:var(--paper);}
+  .accordion{
+    display:flex;
+    gap:10px;
+    height:520px;
+  }
+  .acc-panel{
+    position:relative;
+    flex:1;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    min-width:64px;
+    transition:flex .55s cubic-bezier(.2,.8,.2,1);
+  }
+  .accordion:hover .acc-panel{
+    flex:0.55;
+  }
+  .accordion:hover .acc-panel:hover{
+    flex:4.4;
+  }
+  .acc-panel img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s ease;
+  }
+  .acc-panel:hover img{
+    transform:scale(1.05);
+  }
+  .acc-panel::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(20,19,17,0.88) 0%, rgba(20,19,17,0.25) 42%, transparent 68%);
+  }
+  .acc-vertical{
+    position:absolute;
+    left:0;right:0;bottom:26px;
+    text-align:center;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    color:var(--paper);
+    font-weight:700;
+    font-size:1.15rem;
+    white-space:nowrap;
+    opacity:1;
+    transition:opacity .25s ease;
+    pointer-events:none;
+    z-index:2;
+  }
+  .acc-panel:hover .acc-vertical{
+    opacity:0;
+  }
+  .acc-horizontal{
+    position:absolute;
+    left:0;right:0;bottom:0;
+    padding:28px 30px;
+    opacity:0;
+    transform:translateY(12px);
+    transition:opacity .3s ease, transform .3s ease;
+    pointer-events:none;
+    z-index:2;
+    white-space:nowrap;
+  }
+  .acc-panel:hover .acc-horizontal{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:.18s;
+  }
+  .acc-horizontal h3{
+    color:var(--paper);
+    font-size:1.7rem;
+    margin-bottom:8px;
+  }
+  .acc-horizontal p{
+    color:rgba(246,243,236,0.88);
+    font-size:0.96rem;
+    max-width:34ch;
+    white-space:normal;
+  }
+
+  @media (max-width:900px){
+    .accordion{
+      flex-direction:column;
+      height:auto;
+    }
+    .acc-panel{height:110px;flex:none !important;}
+    .acc-vertical{writing-mode:horizontal-tb;transform:none;bottom:16px;left:20px;right:auto;text-align:left;}
+    .acc-horizontal{padding:20px;}
+    .acc-horizontal h3{font-size:1.3rem;}
+  }
+
+  /* ---------- BEFORE / AFTER SLIDER ---------- */
+  .baa{background:var(--canvas-2);}
+  .baa-slider{
+    position:relative;
+    width:100%;
+    height:520px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(32,30,27,0.16);
+    cursor:ew-resize;
+    -webkit-user-select:none;
+    user-select:none;
+  }
+  .baa-after{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    pointer-events:none;
+    filter:saturate(1.2) contrast(1.08) brightness(1.04);
+  }
+  .baa-shine{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.32) 45%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.32) 55%, transparent 70%);
+    background-size:220% 220%;
+    animation:baaShineSweep 5s ease-in-out infinite;
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+  @keyframes baaShineSweep{
+    0%{background-position:220% 0%;}
+    55%{background-position:-60% 0%;}
+    100%{background-position:-60% 0%;}
+  }
+  .baa-before-wrap{
+    position:absolute;
+    inset:0;
+    width:50%;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .baa-before-wrap img{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    max-width:none;
+    object-fit:cover;
+    filter:saturate(0.5) contrast(0.92) brightness(0.92);
+  }
+  .baa-handle{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:0;
+    border-left:3px solid var(--paper);
+    transform:translateX(-50%);
+    z-index:3;
+    pointer-events:none;
+  }
+  .baa-handle-knob{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:46px;height:46px;
+    background:var(--yellow);
+    border:3px solid var(--paper);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink);
+    box-shadow:0 4px 14px rgba(0,0,0,0.35);
+  }
+  .baa-label{
+    position:absolute;
+    top:18px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:9px 18px;
+    border-radius:100px;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:0.85rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    z-index:3;
+    pointer-events:none;
+  }
+  .baa-label-before{
+    left:20px;
+    color:var(--paper);
+    background:rgba(20,19,17,0.65);
+    transition:opacity .25s ease;
+  }
+  .baa-label-after{
+    right:20px;
+    color:var(--paper);
+    background:rgba(20,19,17,0.65);
+    transition:opacity .25s ease;
+  }
+
+  .baa-brush-stroke{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:46px;
+    background:linear-gradient(180deg, var(--yellow) 0%, var(--yellow-deep) 30%, var(--blue) 65%, var(--clay) 100%);
+    opacity:0.6;
+    mix-blend-mode:multiply;
+    clip-path:polygon(15% 0%, 85% 4%, 100% 12%, 78% 22%, 100% 32%, 82% 44%, 100% 56%, 76% 66%, 100% 78%, 84% 88%, 100% 100%, 0% 100%, 18% 90%, 0% 80%, 22% 68%, 0% 58%, 20% 46%, 0% 34%, 24% 24%, 0% 14%);
+    pointer-events:none;
+    z-index:2;
+  }
+
+  @media (max-width:700px){
+    .baa-slider{height:360px;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--canvas-2);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .about-card{
+    background:var(--ink);
+    color:var(--paper);
+    padding:36px;
+    border-radius:4px;
+    position:relative;
+  }
+  .about-card .stat-num{color:var(--yellow);}
+  .about-card .stat-label{color:var(--paper);opacity:0.75;}
+  .about-badge-row{
+    margin-top:26px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .pill{
+    border:1.5px solid var(--paper);
+    border-radius:100px;
+    padding:6px 14px;
+    font-family:'Poppins', sans-serif;
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  .about-copy h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:20px;}
+  .about-copy p{color:var(--ink-soft);margin-bottom:16px;font-size:1.02rem;}
+  .about-copy p strong{color:var(--ink);}
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--paper);}
+  .rev-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:48px;
+  }
+  .rev-score{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .rev-score .stat-num{font-size:3.4rem;}
+  .stars{color:var(--yellow-deep);font-size:1.1rem;letter-spacing:2px;}
+  .rev-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .rev-card{
+    background:var(--canvas);
+    border:1.5px solid var(--ink);
+    border-radius:4px;
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .rev-swatch{
+    width:34px;height:34px;
+    border-radius:4px;
+    border:1.5px solid var(--ink);
+  }
+  .rev-card p{font-size:0.97rem;color:var(--ink);}
+  .rev-name{
+    font-family:'Poppins', sans-serif;
+    font-size:0.78rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  @media (max-width:900px){.rev-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.rev-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--paper);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  .contact-copy h2{color:var(--paper);font-size:clamp(1.9rem,3.6vw,2.6rem);}
+  .contact-copy p{color:rgba(246,243,236,0.75);margin-top:16px;max-width:42ch;}
+  .hours{margin-top:32px;}
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px solid rgba(246,243,236,0.16);
+    font-family:'Poppins', sans-serif;
+    font-size:0.85rem;
+  }
+  .contact-info{margin-top:28px;font-size:0.95rem;}
+  .contact-info div{margin-bottom:8px;}
+  .contact-info b{color:var(--yellow);}
+
+  form{
+    background:var(--paper);
+    color:var(--ink);
+    padding:34px;
+    border-radius:4px;
+  }
+  .form-row{margin-bottom:18px;}
+  .form-row label{
+    display:block;
+    font-family:'Poppins', sans-serif;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:7px;
+    color:var(--ink-soft);
+  }
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--ink);
+    border-radius:3px;
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    background:#fff;
+    color:var(--ink);
+  }
+  .form-row textarea{resize:vertical;min-height:90px;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:rgba(246,243,236,0.6);
+    padding:36px 0;
+    border-top:1px solid rgba(246,243,236,0.14);
+    font-size:0.85rem;
+  }
+  .foot-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  .foot-row .logo{color:var(--paper);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#" class="logo"><img src="https://i.imgur.com/F76ximG.jpeg" alt="Kevin Johnson Painting logo"></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#before-after">Before &amp; After</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <span class="nav-phone"><a href="tel:5103969998">(510) 396-9998</a></span>
+      <a href="#contact" class="btn btn-primary" style="padding:11px 20px;font-size:0.85rem;">Free Estimate</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">San Jose &middot; Interior &amp; Exterior Painting</div>
+      <h1 style="margin-top:14px;">The painter your <em>neighbors</em> already recommended</h1>
+      <p class="hero-sub">Kevin Johnson has been painting Silicon Valley homes since the mid-1980s, and running his own contracting business since 2002. That history shows up as a 4.8-star reputation across 86 Yelp reviews — real prep work, honest quotes, and a walkthrough when the job is actually done.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+        <a href="#reviews" class="btn btn-dark">Read the Reviews</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">4.8</div>
+          <div class="stat-label">Yelp Rating</div>
+        </div>
+        <div>
+          <div class="stat-num">86</div>
+          <div class="stat-label">Verified Reviews</div>
+        </div>
+        <div>
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photos" aria-hidden="false">
+      <div class="photo-frame hero-photo-main">
+        <img src="https://i.imgur.com/Dz3dlpa.jpeg" alt="Kevin Johnson Painting project — San Jose, CA">
+      </div>
+      <div class="photo-frame hero-photo-accent">
+        <img src="https://i.imgur.com/otvRepz.jpeg" alt="Kevin Johnson Painting project — San Jose, CA">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap trust-row">
+    <span>Verified License</span>
+    <span>Free Estimates</span>
+    <span>Black-Owned Business</span>
+    <span>Eco-Friendly Materials</span>
+    <span>Commercial &amp; Residential</span>
+    <span>Available By Appointment</span>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What We Paint</div>
+      <h2>We <span style="color:var(--blue);">Paint</span> Everything</h2>
+      <p>From cozy living rooms to two-story exteriors, we bring color and craftsmanship to every surface across San Jose.</p>
+    </div>
+    <div class="accordion">
+      <div class="acc-panel">
+        <img src="https://i.imgur.com/bRBDL2A.jpeg" alt="Interior painting project in San Jose, CA">
+        <div class="acc-vertical">Interior Painting</div>
+        <div class="acc-horizontal">
+          <h3>Interior Painting</h3>
+          <p>Transform your living spaces with flawless color and finish.</p>
+        </div>
+      </div>
+      <div class="acc-panel">
+        <img src="https://i.imgur.com/Dz3dlpa.jpeg" alt="Exterior painting project in San Jose, CA">
+        <div class="acc-vertical">Exterior Painting</div>
+        <div class="acc-horizontal">
+          <h3>Exterior Painting</h3>
+          <p>Curb appeal that lasts, with coatings built for South Bay weather.</p>
+        </div>
+      </div>
+      <div class="acc-panel">
+        <img src="https://i.imgur.com/KfWGgO7.jpeg" alt="Cabinet painting project in San Jose, CA">
+        <div class="acc-vertical">Cabinet Painting</div>
+        <div class="acc-horizontal">
+          <h3>Cabinet Painting</h3>
+          <p>Refresh your kitchen with a smooth, factory-quality finish.</p>
+        </div>
+      </div>
+      <div class="acc-panel">
+        <img src="https://i.imgur.com/69ohqRr.png" alt="Trim and molding painting project in San Jose, CA">
+        <div class="acc-vertical">Trim &amp; Molding</div>
+        <div class="acc-horizontal">
+          <h3>Trim &amp; Molding</h3>
+          <p>Doors, sliders, windows, and handrails finished with real detail work.</p>
+        </div>
+      </div>
+      <div class="acc-panel">
+        <img src="https://i.imgur.com/KdOZ6cq.jpeg" alt="Exterior staining project in San Jose, CA">
+        <div class="acc-vertical">Exterior Staining</div>
+        <div class="acc-horizontal">
+          <h3>Exterior Staining</h3>
+          <p>Decks, fences, and wood surfaces stained to protect against the elements.</p>
+        </div>
+      </div>
+      <div class="acc-panel">
+        <img src="https://i.imgur.com/kFZjiDt.jpeg" alt="Drywall and crack repair project in San Jose, CA">
+        <div class="acc-vertical">Drywall Repair</div>
+        <div class="acc-horizontal">
+          <h3>Drywall &amp; Crack Repair</h3>
+          <p>Cracks, patches, and drywall fixes handled before a single coat goes on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="baa" id="before-after">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Real Results</div>
+      <h2>Before and <span style="color:var(--blue);">After</span></h2>
+    </div>
+    <div class="baa-slider" id="baaSlider">
+      <img class="baa-after" src="https://i.imgur.com/zmuXyvL.jpeg" alt="After — Kevin Johnson Painting project">
+      <div class="baa-shine"></div>
+      <div class="baa-before-wrap" id="baaBeforeWrap">
+        <img id="baaBeforeImg" src="https://i.imgur.com/LK0Y1kK.jpeg" alt="Before — Kevin Johnson Painting project">
+      </div>
+      <div class="baa-brush-stroke" id="baaBrush"></div>
+      <div class="baa-handle" id="baaHandle">
+        <div class="baa-handle-knob">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M18.37 2.63a2.12 2.12 0 0 1 3 3L11 16 6 18l2-5L18.37 2.63z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M6 18l-2 4 4-2" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      <span class="baa-label baa-label-before" id="baaLabelBefore">Before</span>
+      <span class="baa-label baa-label-after" id="baaLabelAfter">After</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-card">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Years hands-on, since the mid-1980s</div>
+      <div class="about-badge-row">
+        <span class="pill">Verified License</span>
+        <span class="pill">Free Estimates</span>
+        <span class="pill">Black-Owned</span>
+        <span class="pill">Eco-Friendly</span>
+        <span class="pill">Commercial Work</span>
+        <span class="pill">By Appointment</span>
+        <span class="pill">Credit Cards Accepted</span>
+      </div>
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow">About Kevin</div>
+      <h2 style="margin-top:10px;">Four decades in, still on every job site.</h2>
+      <p>Kevin's career started in the mid-1980s painting tract homes across Silicon Valley. From there he joined <strong>Local Union 506</strong>, building journeyman-level skills on commercial and industrial projects, before eventually branching out to run his own jobs. <strong>Kevin Johnson Painting</strong> has been serving San Jose as a licensed contracting business since 2002.</p>
+      <p>Every client gets a paint consultation up front — so they know exactly what materials and finish they're paying for — and a full walkthrough when the job is done, not just an invoice.</p>
+      <div style="border-left:3px solid var(--blue-deep); background:var(--paper); padding:20px 24px; margin-top:26px; border-radius:0 4px 4px 0;">
+        <p style="font-style:italic; font-size:1.05rem; color:var(--ink); margin-bottom:10px;">"Painting isn't how you get rich — it's a great way to make a living. I learned from my grandmother growing up, and I come from a whole line of painters. I'm still in love with what I do."</p>
+        <div class="rev-name" style="color:var(--blue-deep);">— Kevin Johnson, Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <div>
+        <div class="eyebrow">Straight From Yelp</div>
+        <h2 style="margin-top:10px;">What San Jose is saying</h2>
+      </div>
+      <div class="rev-score">
+        <div>
+          <div class="stat-num">4.8</div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="stat-label">86 reviews<br>on Yelp</div>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-swatch" style="background:var(--yellow);"></div>
+        <p>"Stood out from 10 other bids — thorough prep, clear estimates, and expert advice on sheen and color for our whole house."</p>
+        <div class="rev-name">Jennifer C. — Long Beach, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-swatch" style="background:var(--blue);"></div>
+        <p>"Repainted our whole 1,900 sq ft house in a single day — came back later and knocked out another bedroom in just 3 hours."</p>
+        <div class="rev-name">Coco L. — Fremont, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-swatch" style="background:var(--clay);"></div>
+        <p>"Included extras we never asked for — the gate, front door, and deck — and still landed right in the middle of three bids."</p>
+        <div class="rev-name">Anne-Marie V. — San Jose, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-swatch" style="background:var(--sage);"></div>
+        <p>"Competitive pricing and careful workmanship, plus extra touch-ups he handled without charging a dime."</p>
+        <div class="rev-name">Russ D. — Sunnyvale, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-swatch" style="background:var(--blue-deep);"></div>
+        <p>"Coordinated perfectly with our siding contractor, then came back after installation to finish every detail."</p>
+        <div class="rev-name">H T. — Cupertino, CA</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-swatch" style="background:var(--yellow-deep);"></div>
+        <p>"Painted our house like it was his own — real care, and communication the whole way through."</p>
+        <div class="rev-name">Gary R. — San Francisco, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-copy">
+      <div class="eyebrow" style="color:var(--yellow);">Get In Touch</div>
+      <h2>Let's talk about your project</h2>
+      <p>Tell us a bit about the job and Kevin will follow up with a free estimate — usually within one business day. <strong>Estimates are done in person at your property</strong>, so a walk-through gets scheduled once we hear from you.</p>
+      <div class="hours">
+        <div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span>Saturday</span><span>Closed</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+      <div class="contact-info">
+        <div><b>Phone:</b> <a href="tel:5103969998">(510) 396-9998</a></div>
+        <div><b>Service Area:</b> San Jose &amp; the South Bay</div>
+        <div><b>Email:</b> <a href="mailto:kevinjpainting510@gmail.com">kevinjpainting510@gmail.com</a></div>
+      </div>
+    </div>
+
+    <form id="quoteForm" action="https://formsubmit.co/ajax/kevinjpainting510@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New estimate request — Kevin Johnson Painting website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Kevin Johnson Painting! We received your request and Kevin will call or email you shortly to schedule your free in-person estimate.">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="two-col">
+        <div class="form-row">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="address">Property Address</label>
+        <input type="text" id="address" name="Address" placeholder="Street, city, ZIP — where the estimate is needed" required>
+      </div>
+
+      <div class="form-row">
+        <label for="service">Service Needed</label>
+        <select id="service" name="Service">
+          <option>Exterior Painting</option>
+          <option>Interior Painting</option>
+          <option>Cabinet Refinishing</option>
+          <option>Trim &amp; Molding</option>
+          <option>Exterior Staining</option>
+          <option>Drywall Repair</option>
+          <option>Commercial Project</option>
+          <option>Not Sure Yet</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="message">Tell us about the project</label>
+        <textarea id="message" name="Message" placeholder="Rooms, square footage, timeline — whatever you've got."></textarea>
+      </div>
+
+      <button type="submit" id="quoteSubmitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">Request Free Estimate</button>
+      <p style="font-size:0.82rem;color:var(--ink-soft);text-align:center;margin-top:12px;">Estimates are provided in person — Kevin will schedule a visit to your property.</p>
+      <p id="quoteFormStatus" style="font-size:0.9rem;text-align:center;margin-top:14px;display:none;"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="logo"><img src="https://i.imgur.com/F76ximG.jpeg" alt="Kevin Johnson Painting logo"></div>
+    <div>© 2026 Kevin Johnson Painting. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var slider = document.getElementById('baaSlider');
+  var wrap = document.getElementById('baaBeforeWrap');
+  var handle = document.getElementById('baaHandle');
+  var brush = document.getElementById('baaBrush');
+  var beforeImg = document.getElementById('baaBeforeImg');
+  var labelBefore = document.getElementById('baaLabelBefore');
+  var labelAfter = document.getElementById('baaLabelAfter');
+  if(!slider) return;
+
+  function syncWidth(){
+    var w = slider.getBoundingClientRect().width;
+    beforeImg.style.width = w + 'px';
+  }
+  function setPosition(percent){
+    percent = Math.max(0, Math.min(100, percent));
+    wrap.style.width = percent + '%';
+    handle.style.left = percent + '%';
+    brush.style.left = percent + '%';
+    labelAfter.style.opacity = percent > 96 ? '0' : '1';
+    labelBefore.style.opacity = percent < 4 ? '0' : '1';
+  }
+  function moveHandler(clientX){
+    var rect = slider.getBoundingClientRect();
+    var percent = ((clientX - rect.left) / rect.width) * 100;
+    setPosition(percent);
+  }
+
+  syncWidth();
+  setPosition(50);
+  window.addEventListener('resize', syncWidth);
+
+  var dragging = false;
+  slider.addEventListener('mousedown', function(e){ dragging = true; moveHandler(e.clientX); });
+  window.addEventListener('mousemove', function(e){ if(dragging) moveHandler(e.clientX); });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+
+  slider.addEventListener('touchstart', function(e){ dragging = true; moveHandler(e.touches[0].clientX); }, {passive:true});
+  slider.addEventListener('touchmove', function(e){ if(dragging) moveHandler(e.touches[0].clientX); }, {passive:true});
+  window.addEventListener('touchend', function(){ dragging = false; });
+})();
+
+(function(){
+  var form = document.getElementById('quoteForm');
+  if(!form) return;
+  var btn = document.getElementById('quoteSubmitBtn');
+  var status = document.getElementById('quoteFormStatus');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    status.style.display = 'none';
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function(res){
+      if(res.ok){
+        form.reset();
+        status.style.color = 'var(--sage)';
+        status.textContent = "Thanks — your request is in. Kevin will reach out shortly to schedule your free in-person estimate.";
+      } else {
+        status.style.color = 'var(--clay)';
+        status.textContent = "Something went wrong sending that. Please call (510) 396-9998 or email kevinjpainting510@gmail.com directly.";
+      }
+      status.style.display = 'block';
+    }).catch(function(){
+      status.style.color = 'var(--clay)';
+      status.textContent = "Something went wrong sending that. Please call (510) 396-9998 or email kevinjpainting510@gmail.com directly.";
+      status.style.display = 'block';
+    }).finally(function(){
+      btn.disabled = false;
+      btn.textContent = 'Request Free Estimate';
+    });
+  });
+})();
+</script>
+</body>
+</html>
