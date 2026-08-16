@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Johnson Painting | San Jose Interior & Exterior Painters</title>
+<meta name="description" content="Kevin Johnson Painting — 4.8 stars, 86 Yelp reviews. Interior, exterior, cabinet & trim painting for San Jose homes and businesses. Free estimates.">
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "HousePainter",
+"name": "Kevin Johnson Painting",
+"image": "",
+"areaServed": "San Jose, CA",
+"address": {
+"@type": "PostalAddress",
+"addressLocality": "San Jose",
+"addressRegion": "CA"
+},
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "4.8",
+"reviewCount": "86"
+},
+"foundingDate": "2008",
+"openingHoursSpecification": {
+"@type": "OpeningHoursSpecification",
+"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+"opens": "08:00",
+"closes": "17:00"
+},
+"priceRange": "$$"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+/* Runs before body paints — hides intro instantly on repeat views this session */
+(function(){
+  try{
+    if (sessionStorage.getItem('fwIntroSeen')) {
+      document.documentElement.classList.add('fw-seen');
+    }
+  }catch(e){ /* sessionStorage unavailable (e.g. private mode) — intro will just play */ }
+})();
+</script>
+<style>
+/* ---------- Firework Intro ---------- */
+html.fw-seen #fwIntro{ display:none !important; }
+#fwIntro{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:#0a0e1a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+#fwIntro.fw-hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+#fwCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+.fw-brand{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+  padding:0 20px;
+}
+.fw-brand h1{
+  font-size:clamp(2.4rem, 9vw, 5.5rem);
+  font-weight:800;
+  letter-spacing:0.5px;
+  margin:0 0 14px;
+}
+.fw-word{
+  display:inline-block;
+  opacity:0;
+  color:#1E326E;
+  --fx:0px; --fy:0px;
+  transform:translate(var(--fx), var(--fy)) scale(2.2);
+  transition:opacity 1s ease, transform 1s ease;
+  text-shadow:0 0 4px rgba(255,255,255,0.9), 0 0 24px rgba(255,255,255,0.45);
+}
+.fw-word + .fw-word{ margin-left:0.32em; }
+.fw-word.fw-show{
+  opacity:1;
+  transform:translate(0, 0) scale(1);
+}
+.fw-sub{
+  font-size:clamp(1rem, 2.6vw, 1.4rem);
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#f4c15a;
+  margin:0;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.fw-sub.fw-show{
+  opacity:1;
+  transform:translateY(0);
+}
+.fw-skip{
+  position:absolute;
+  bottom:24px;
+  right:24px;
+  z-index:3;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.35);
+  color:#fff;
+  font-family:'Inter',sans-serif;
+  font-size:0.82rem;
+  font-weight:600;
+  padding:9px 16px;
+  border-radius:999px;
+  cursor:pointer;
+  backdrop-filter:blur(4px);
+  transition:background .2s ease;
+}
+.fw-skip:hover{ background:rgba(255,255,255,0.22); }
+body.fw-lock{ overflow:hidden; height:100vh; }
+@media (prefers-reduced-motion: reduce){
+  #fwIntro{ display:none !important; }
+}
+</style>
+</head>
+<body>
+
+<div id="fwIntro">
+  <canvas id="fwCanvas"></canvas>
+  <div class="fw-brand" id="fwBrand">
+    <h1>
+      <span class="fw-word" id="fwWord1">Kevin</span>
+      <span class="fw-word" id="fwWord2">Johnson</span>
+      <span class="fw-word" id="fwWord3">Painting</span>
+      <span class="fw-word" id="fwWord4">Inc</span>
+    </h1>
+    <p class="fw-sub" id="fwSub">San Jose &middot; Since 1985</p>
+  </div>
+  <button class="fw-skip" id="fwSkip">Skip &rarr;</button>
+</div>
+
+<div class="promo-overlay" id="promoOverlay">
+<div class="promo-card">
+<button class="promo-close" id="promoClose" aria-label="Close">&times;</button>
+<div class="eyebrow promo-eyebrow">Limited-Time Savings</div>
+<h3>Save on Your Next Paint Job</h3>
+<p>Kevin's currently offering three discounts — and yes, you can combine them.</p>
+<div class="promo-list">
+<div class="promo-item">
+<span class="promo-label-wrap">
+<svg class="promo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/></svg>
+<span class="promo-label">New Client</span>
+</span>
+<span class="promo-pct">10% Off</span>
+</div>
+<div class="promo-item">
+<span class="promo-label-wrap">
+<svg class="promo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5.25-3.5 9.5-8 10-4.5-.5-8-4.75-8-10V6l8-4z"/></svg>
+<span class="promo-label">Military</span>
+</span>
+<span class="promo-pct">10% Off</span>
+</div>
+<div class="promo-item">
+<span class="promo-label-wrap">
+<svg class="promo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+<span class="promo-label">Senior Citizen</span>
+</span>
+<span class="promo-pct">5% Off</span>
+</div>
+</div>
+<p class="promo-stack-note"><strong>These discounts are stackable</strong> — a new client who's also a veteran could save 20% on their estimate.</p>
+<a href="#contact" id="promoCta" class="btn btn-primary" style="width:100%;justify-content:center;">Claim My Discount</a>
+</div>
+</div>
+
+<header>
+<nav>
+<a href="#" class="logo"><img src="assets/images/logo.png" alt="Kevin Johnson Painting logo"></a>
+<div class="nav-links">
+<a href="#" id="navAboutLink" class="nav-about-btn">Meet Kevin ★</a>
+<a href="#services">Services</a>
+<a href="#before-after">Before &amp; After</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="nav-cta">
+<span class="nav-phone"><a href="tel:5103969998">(510) 396-9998</a></span>
+<a href="#contact" class="btn btn-primary" style="padding:11px 20px;font-size:0.85rem;">Free Estimate</a>
+</div>
+</nav>
+</header>
+
+<div class="promo-banner" id="promoBanner">
+<div class="promo-banner-inner">
+<span class="promo-banner-item"><svg class="promo-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/></svg><strong>New Client</strong> 10% Off</span>
+<span class="promo-banner-sep">•</span>
+<span class="promo-banner-item"><svg class="promo-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5.25-3.5 9.5-8 10-4.5-.5-8-4.75-8-10V6l8-4z"/></svg><strong>Military</strong> 10% Off</span>
+<span class="promo-banner-sep">•</span>
+<span class="promo-banner-item"><svg class="promo-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><strong>Senior Citizen</strong> 5% Off</span>
+<span class="promo-banner-sep">•</span>
+<span>Discounts Stack!</span>
+</div>
+<button class="promo-banner-close" id="promoBannerClose" aria-label="Dismiss">&times;</button>
+</div>
+
+<section class="hero">
+<img class="hero-bg-img" src="https://i.imgur.com/f4CcQoj.jpeg" alt="" aria-hidden="true">
+<div class="wrap">
+<div class="hero-copy">
+<div class="eyebrow">San Jose &middot; Interior &amp; Exterior Painting</div>
+<h1 style="margin-top:14px;">The painter your <em>neighbors</em> already recommended</h1>
+<p class="hero-sub">Kevin Johnson has been painting Silicon Valley homes since 1985, and running his own contracting business since 2008. That history shows up as a 4.8-star reputation across 86 Yelp reviews — real prep work, honest quotes, and a walkthrough when the job is actually done.</p>
+<div class="hero-actions">
+<a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+<a href="#reviews" class="btn btn-dark">Read the Reviews</a>
+</div>
+<div class="hero-stats">
+<div>
+<div class="stat-num">4.8</div>
+<div class="stat-label">Yelp Rating</div>
+</div>
+<div>
+<div class="stat-num">86</div>
+<div class="stat-label">Verified Reviews</div>
+</div>
+<div>
+<div class="stat-num">41</div>
+<div class="stat-label">Years of Experience</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="trust">
+<div class="wrap trust-row">
+<span>Verified License</span>
+<span>Free Estimates</span>
+<span>Black-Owned Business</span>
+<span>Eco-Friendly Materials</span>
+<span>Commercial &amp; Residential</span>
+<span>Available By Appointment</span>
+</div>
+</div>
+
+<section class="services" id="services">
+<div class="wrap">
+<div class="sec-head">
+<div class="eyebrow">What We Paint</div>
+<h2>We <span style="color:var(--blue);">Paint</span> Everything</h2>
+<p>From cozy living rooms to two-story exteriors, we bring color and craftsmanship to every surface across San Jose.</p>
+</div>
+<div class="accordion">
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/bRBDL2A.jpeg" alt="Interior painting project in San Jose, CA">
+<div class="acc-vertical">Interior Painting</div>
+<div class="acc-horizontal">
+<h3>Interior Painting</h3>
+<p>Transform your living spaces with flawless color and finish.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/Dz3dlpa.jpeg" alt="Exterior painting project in San Jose, CA">
+<div class="acc-vertical">Exterior Painting</div>
+<div class="acc-horizontal">
+<h3>Exterior Painting</h3>
+<p>Curb appeal that lasts, with coatings built for South Bay weather.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/69ohqRr.png" alt="Cabinet painting project in San Jose, CA">
+<div class="acc-vertical">Cabinet Painting</div>
+<div class="acc-horizontal">
+<h3>Cabinet Painting</h3>
+<p>Refresh your kitchen with a smooth, factory-quality finish.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/KfWGgO7.jpeg" alt="Trim and molding painting project in San Jose, CA">
+<div class="acc-vertical">Trim &amp; Molding</div>
+<div class="acc-horizontal">
+<h3>Trim &amp; Molding</h3>
+<p>Doors, sliders, windows, and handrails finished with real detail work.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/KdOZ6cq.jpeg" alt="Exterior staining project in San Jose, CA">
+<div class="acc-vertical">Exterior Staining</div>
+<div class="acc-horizontal">
+<h3>Exterior Staining</h3>
+<p>Decks, fences, and wood surfaces stained to protect against the elements.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/kFZjiDt.jpeg" alt="Drywall and crack repair project in San Jose, CA">
+<div class="acc-vertical">Drywall Repair</div>
+<div class="acc-horizontal">
+<h3>Drywall &amp; Crack Repair</h3>
+<p>Cracks, patches, and drywall fixes handled before a single coat goes on.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/0hTvVar.png" alt="Garage floor coating project in San Jose, CA">
+<div class="acc-vertical">Garage Floors</div>
+<div class="acc-horizontal">
+<h3>Garage Floors</h3>
+<p>Durable epoxy and coating systems that hold up to daily wear.</p>
+</div>
+</a>
+<a class="acc-panel" href="https://www.yelp.com/biz/kevin-johnson-painting-san-jose" target="_blank" rel="noopener noreferrer">
+<img src="https://i.imgur.com/MvU4xZ6.jpeg" alt="Commercial painting project in San Jose, CA">
+<div class="acc-vertical">Commercial Painting</div>
+<div class="acc-horizontal">
+<h3>Commercial Painting</h3>
+<p>Reliable, low-disruption painting for offices, retail, and job sites.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<div class="truck-road" aria-hidden="true">
+<div class="truck-road-surface">
+<div class="truck-road-line"></div>
+</div>
+<div class="truck-wrap">
+<div class="truck-shadow"></div>
+<img class="truck-img" src="https://i.imgur.com/5k5S1ek.png" alt="Kevin Johnson Painting company truck">
+</div>
+</div>
+
+<section class="baa" id="before-after">
+<div class="wrap">
+<div class="sec-head">
+<div class="eyebrow">Real Results</div>
+<h2>Before and <span style="color:var(--blue);">After</span></h2>
+</div>
+<div class="baa-slider" id="baaSlider">
+<img class="baa-after" src="https://i.imgur.com/zmuXyvL.jpeg" alt="After — Kevin Johnson Painting project">
+<div class="baa-shine"></div>
+<div class="baa-before-wrap" id="baaBeforeWrap">
+<img id="baaBeforeImg" src="https://i.imgur.com/LK0Y1kK.jpeg" alt="Before — Kevin Johnson Painting project">
+</div>
+<div class="baa-brush-stroke" id="baaBrush"></div>
+<div class="baa-handle" id="baaHandle">
+<div class="baa-handle-knob">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+<path d="M18.37 2.63a2.12 2.12 0 0 1 3 3L11 16 6 18l2-5L18.37 2.63z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M6 18l-2 4 4-2" fill="currentColor"/>
+</svg>
+</div>
+</div>
+<span class="baa-label baa-label-before" id="baaLabelBefore">Before</span>
+<span class="baa-label baa-label-after" id="baaLabelAfter">After</span>
+</div>
+</div>
+</section>
+
+<div class="about-modal-overlay" id="aboutModalOverlay">
+<div class="about-modal-card" id="aboutModalCard">
+<button class="about-modal-close" id="aboutModalClose" aria-label="Close">&times;</button>
+<div class="about-modal-video-wrap">
+<video class="about-modal-video" id="aboutModalVideo" muted loop playsinline>
+<source src="assets/video/about-kevin.mp4" type="video/mp4">
+</video>
+</div>
+<div class="wrap about-grid">
+<div class="about-card">
+<div class="stat-num">41</div>
+<div class="stat-label">Years hands-on, since 1985</div>
+<div class="about-badge-row">
+<span class="pill">Verified License</span>
+<span class="pill">Free Estimates</span>
+<span class="pill">Black-Owned</span>
+<span class="pill">Eco-Friendly</span>
+<span class="pill">Commercial Work</span>
+<span class="pill">By Appointment</span>
+<span class="pill">Credit Cards Accepted</span>
+</div>
+<div class="license-block">
+<div class="license-row"><span>License #</span><span>1025934</span></div>
+<div class="license-row"><span>Issued by</span><span>CA CSLB</span></div>
+<div class="license-row"><span>License Type</span><span>C33 – Painting &amp; Decoration</span></div>
+</div>
+</div>
+<div class="about-copy">
+<div class="eyebrow">About Kevin</div>
+<h2 style="margin-top:10px;">41 years of craftsmanship, still on every job site.</h2>
+<p>At <strong>Kevin Johnson Painting Inc.</strong>, our story is built on over four decades of hard work, dedication, and a passion for quality craftsmanship.</p>
+<p>Kevin Johnson began his painting career in <strong>1985</strong>, learning that exceptional painting is about much more than applying paint — it's about proper preparation, attention to detail, and treating every home and business with the care and respect it deserves. Throughout the years, Kevin developed his skills by working on a wide variety of residential and commercial projects, earning a reputation for reliability, professionalism, and outstanding workmanship.</p>
+<p>After more than two decades of experience in the trade, Kevin founded <strong>Kevin Johnson Painting Inc.</strong> in <strong>2008</strong> with a vision of providing customers with honest service, superior craftsmanship, and lasting results. That same commitment continues to guide the company today.</p>
+<p>With <strong>41 years of experience</strong>, Kevin Johnson Painting Inc. has become a trusted name for homeowners, property managers, and businesses throughout the Bay Area. We specialize in interior and exterior painting, detailed surface preparation, cabinet refinishing, trim and finish work, and protective coatings. Every project is completed using premium products, proven application techniques, and meticulous attention to detail to ensure a beautiful, long-lasting finish.</p>
+<p>We understand that your home or business is one of your most valuable investments. That's why we believe in clear communication, dependable service, fair pricing, and delivering results that exceed expectations. From the initial consultation to the final walkthrough, our goal is to make every project a smooth and enjoyable experience.</p>
+<p>At Kevin Johnson Painting Inc., we don't just paint properties — we build lasting relationships through integrity, quality, and a commitment to excellence. We are proud of the reputation we've earned over the past 41 years and look forward to serving our community for many years to come.</p>
+</div>
+</div>
+</div>
+</div>
+
+<section class="reviews" id="reviews">
+<div class="wrap">
+<div class="rev-head">
+<div>
+<div class="eyebrow">Straight From Yelp</div>
+<h2 style="margin-top:10px;">What San Jose is saying</h2>
+</div>
+<div class="rev-score">
+<div>
+<div class="stat-num">4.8</div>
+<div class="stars">★★★★★</div>
+</div>
+<div class="stat-label">86 reviews<br>on Yelp</div>
+</div>
+</div>
+<div class="rev-grid">
+<div class="rev-card">
+<div class="rev-swatch" style="background:var(--yellow);"></div>
+<p>"Stood out from 10 other bids — thorough prep, clear estimates, and expert advice on sheen and color for our whole house."</p>
+<div class="rev-name">Jennifer C. — Long Beach, CA</div>
+</div>
+<div class="rev-card">
+<div class="rev-swatch" style="background:var(--blue);"></div>
+<p>"Repainted our whole 1,900 sq ft house in a single day — came back later and knocked out another bedroom in just 3 hours."</p>
+<div class="rev-name">Coco L. — Fremont, CA</div>
+</div>
+<div class="rev-card">
+<div class="rev-swatch" style="background:var(--clay);"></div>
+<p>"Included extras we never asked for — the gate, front door, and deck — and still landed right in the middle of three bids."</p>
+<div class="rev-name">Anne-Marie V. — San Jose, CA</div>
+</div>
+<div class="rev-card">
+<div class="rev-swatch" style="background:var(--sage);"></div>
+<p>"Competitive pricing and careful workmanship, plus extra touch-ups he handled without charging a dime."</p>
+<div class="rev-name">Russ D. — Sunnyvale, CA</div>
+</div>
+<div class="rev-card">
+<div class="rev-swatch" style="background:var(--blue-deep);"></div>
+<p>"Coordinated perfectly with our siding contractor, then came back after installation to finish every detail."</p>
+<div class="rev-name">H T. — Cupertino, CA</div>
+</div>
+<div class="rev-card">
+<div class="rev-swatch" style="background:var(--yellow-deep);"></div>
+<p>"Painted our house like it was his own — real care, and communication the whole way through."</p>
+<div class="rev-name">Gary R. — San Francisco, CA</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap contact-grid">
+<div class="contact-copy">
+<div class="eyebrow" style="color:var(--yellow);">Get In Touch</div>
+<h2>Let's talk about your project</h2>
+<p>Tell us a bit about the job and Kevin will follow up with a free estimate — usually within one business day. <strong>Estimates are done in person at your property</strong>, so a walk-through gets scheduled once we hear from you.</p>
+<div class="hours">
+<div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 5:00 PM</span></div>
+<div class="hours-row"><span>Saturday</span><span>Closed</span></div>
+<div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+</div>
+<div class="contact-info">
+<div><b>Phone:</b> <a href="tel:5103969998">(510) 396-9998</a></div>
+<div><b>Service Area:</b> San Jose &amp; the South Bay</div>
+<div><b>Email:</b> <a href="mailto:kevinjpainting510@gmail.com">kevinjpainting510@gmail.com</a></div>
+</div>
+</div>
+<form id="quoteForm" action="https://formsubmit.co/ajax/kevinjpainting510@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New estimate request — Kevin Johnson Painting website">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Thanks for reaching out to Kevin Johnson Painting! We received your request and Kevin will call or email you shortly to schedule your free in-person estimate.">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="two-col">
+<div class="form-row">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="Name" required>
+</div>
+<div class="form-row">
+<label for="phone">Phone</label>
+<input type="tel" id="phone" name="Phone" required>
+</div>
+</div>
+<div class="form-row">
+<label for="email">Email</label>
+<input type="email" id="email" name="Email" required>
+</div>
+<div class="form-row">
+<label for="address">Property Address</label>
+<input type="text" id="address" name="Address" placeholder="Street, city, ZIP — where the estimate is needed" required>
+</div>
+<div class="form-row">
+<label>Preferred Days for Your In-Person Estimate (pick 3)</label>
+<div class="three-col">
+<div>
+<input type="date" name="Preferred Day 1" aria-label="1st choice date">
+<span class="field-hint">1st choice</span>
+</div>
+<div>
+<input type="date" name="Preferred Day 2" aria-label="2nd choice date">
+<span class="field-hint">2nd choice</span>
+</div>
+<div>
+<input type="date" name="Preferred Day 3" aria-label="3rd choice date">
+<span class="field-hint">3rd choice</span>
+</div>
+</div>
+</div>
+<div class="form-row">
+<label for="service">Service Needed</label>
+<select id="service" name="Service">
+<option>Exterior Painting</option>
+<option>Interior Painting</option>
+<option>Cabinet Refinishing</option>
+<option>Trim &amp; Molding</option>
+<option>Exterior Staining</option>
+<option>Drywall Repair</option>
+<option>Garage Floors</option>
+<option>Commercial Project</option>
+<option>Not Sure Yet</option>
+</select>
+</div>
+<div class="form-row">
+<label for="message">Tell us about the project</label>
+<textarea id="message" name="Message" placeholder="Rooms, square footage, timeline — whatever you've got."></textarea>
+</div>
+<button type="submit" id="quoteSubmitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">Request Free Estimate</button>
+<p style="font-size:0.82rem;color:var(--ink-soft);text-align:center;margin-top:12px;">Estimates are provided in person — Kevin will schedule a visit to your property.</p>
+<p id="quoteFormStatus" style="font-size:0.9rem;text-align:center;margin-top:14px;display:none;"></p>
+</form>
+</div>
+</section>
+
+<footer>
+<div class="wrap foot-row">
+<div class="logo"><img src="assets/images/logo.png" alt="Kevin Johnson Painting logo"></div>
+<div>© 2026 Kevin Johnson Painting. All rights reserved. &nbsp;·&nbsp; CA CSLB License #1025934 (C33)</div>
+</div>
+</footer>
+
+<script src="js/before-after-slider.js"></script>
+<script src="js/contact-form.js"></script>
+<script src="js/promo-banner.js"></script>
+<script src="js/about-modal.js"></script>
+<script src="js/firework-intro.js"></script>
+</body>
+</html>
